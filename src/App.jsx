@@ -5,8 +5,14 @@ export default function App() {
 
   const [newTitle, setNewTitle] = useState('')
 
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
+
     <>
+
       <div className="container text-center">
         <h1>Posts</h1>
         {articles.map((article, index) => (
@@ -15,10 +21,10 @@ export default function App() {
       </div>
 
 
-      <form className='m-4 text-center'>
+      <form onSubmit={handleSubmit} className='m-4 text-center'>
 
         <div className="mb-3">
-          <label htmlFor="" className="form-label">New Titol</label>
+          <label className="form-label">New Title</label>
           <input
             type="text"
             className="form-control"
