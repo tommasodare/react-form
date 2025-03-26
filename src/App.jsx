@@ -3,6 +3,8 @@ import articles from './data/articols';
 
 export default function App() {
 
+  const [newTitle, setNewTitle] = useState('')
+
   return (
     <>
       <div className="container text-center">
@@ -21,10 +23,14 @@ export default function App() {
             type="text"
             className="form-control"
             placeholder="Insert new Title Here"
+            value={newTitle}
+            onChange={e => { setNewTitle(e.target.value) }}
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <p>il nuovo titolo è {newTitle}</p>
+
+        <button type="submit" className="btn btn-primary">Submit</button>
 
       </form>
 
