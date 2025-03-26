@@ -4,9 +4,15 @@ import articles from './data/articols';
 export default function App() {
 
   const [newTitle, setNewTitle] = useState('')
+  const [tasks, setTasks] = useState(articles)
 
   const handleSubmit = event => {
     event.preventDefault();
+    const newArticles = {
+      title: newTitle
+    }
+    setTasks([...tasks, newArticles])
+    setNewTitle('')
   }
 
   return (
