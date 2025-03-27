@@ -21,7 +21,7 @@ export default function App() {
 
       <div className="container text-center">
         <h1>Posts</h1>
-        {articles.map((article, index) => (
+        {tasks.map((article, index) => (
           <div key={index}>{article.title}</div>
         ))}
       </div>
